@@ -7,6 +7,7 @@ import './globals.scss'
 
 export default function Home(): ReactNode {
     const [element, setElement] = useState<HTMLElement | null>(null)
+    const [removeCommentTags, setRemoveCommentTags] = useState<boolean>(false)
     const ref = useRef<HTMLDivElement>(null)
 
     const handleInput = (event: React.ChangeEvent<HTMLDivElement>) => {
@@ -15,9 +16,13 @@ export default function Home(): ReactNode {
         setElement(element)
     }
 
+    const convertedHtml = removeCommentTags
+        ? element?.innerHTML.replace(/<!--.*?-->/g, '')
+        : element?.innerHTML
+
     const handleCopy = () => {
         if (!element) return
-        navigator.clipboard.writeText(element?.innerHTML)
+        navigator.clipboard.writeText(convertedHtml || '')
     }
 
     const handleClear = () => {
@@ -39,7 +44,17 @@ export default function Home(): ReactNode {
                 <Button onClick={handleClear}>Clear</Button>
             </div>
             <div className={styles.panel}>
-                <div className={styles.textField}>{element?.innerHTML}</div>
+                <div className={styles.textFieldWithSettings}>{convertedHtml}</div>
+                <div className={styles.settings}>
+                    <label>Remove comment tags
+                        <input
+                            type="checkbox"
+                            name="remove-comment-tags"
+                            value={String(removeCommentTags)}
+                            onChange={() => setRemoveCommentTags(!removeCommentTags)}
+                        />
+                    </label>
+                </div>
                 <Button onClick={handleCopy}>Copy</Button>
             </div>
         </main>
