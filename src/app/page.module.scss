@@ -29,3 +29,20 @@
 
     font-family: 'Courier New', Courier, monospace;
 }
+
+.textFieldWithSettings {
+    width: 100%;
+    height: calc(100% - 50px - 10px - 1em);
+
+    padding: 3px;
+
+    overflow-y: scroll;
+
+    border: 1px solid blue;
+
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.settings {
+    height: 1em;
+}
