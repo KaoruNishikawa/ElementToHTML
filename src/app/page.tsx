@@ -50,7 +50,7 @@ export default function Home(): ReactNode {
                         <input
                             type="checkbox"
                             name="remove-comment-tags"
-                            value={String(removeCommentTags)}
+                            checked={removeCommentTags}
                             onChange={() => setRemoveCommentTags(!removeCommentTags)}
                         />
                     </label>
