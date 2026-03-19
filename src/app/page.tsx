@@ -10,9 +10,9 @@ export default function Home(): ReactNode {
     const [removeCommentTags, setRemoveCommentTags] = useState<boolean>(false)
     const ref = useRef<HTMLDivElement>(null)
 
-    const handleInput = (event: React.ChangeEvent<HTMLDivElement>) => {
+    const handleInput = (event: React.InputEvent<HTMLDivElement>) => {
         // Clone the element, otherwise mutation of element won't trigger re-rendering
-        const element = event.target.cloneNode(true) as HTMLElement
+        const element = event.currentTarget
         setElement(element)
     }
 
