@@ -12,7 +12,7 @@ export default function Home(): ReactNode {
 
     const handleInput = (event: React.InputEvent<HTMLDivElement>) => {
         // Clone the element, otherwise mutation of element won't trigger re-rendering
-        const element = event.currentTarget
+        const element = (event.target as HTMLElement).cloneNode(true) as HTMLElement
         setElement(element)
     }
 
