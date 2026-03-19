@@ -10,17 +10,17 @@
         "format": "biome format --write src"
     },
     "dependencies": {
-        "next": "^14.2.32",
-        "react": "^18",
-        "react-dom": "^18"
+        "next": "^16.1.6",
+        "react": "^19.2.4",
+        "react-dom": "^19.2.4"
     },
     "devDependencies": {
-        "@biomejs/biome": "^1.4.1",
-        "@types/node": "^20",
-        "@types/react": "^18",
-        "@types/react-dom": "^18",
-        "sass": "^1.69.5",
-        "typescript": "^5"
+        "@biomejs/biome": "^2.4.7",
+        "@types/node": "^25.5.0",
+        "@types/react": "^19.2.14",
+        "@types/react-dom": "^19.2.3",
+        "sass": "^1.98.0",
+        "typescript": "^5.9.3"
     },
     "browser": {
         "fs": false,
